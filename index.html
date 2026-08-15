@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+  NEO MEDIA PRODUCTIONS INC
+  BEFORE DEPLOY — find/replace two things:
+    contact@neomediainc.com   → contact@yourdomain.com   (must be on your domain, not gmail)
+    neomediainc.com  → yourdomain.com           (appears in og:url / canonical)
+  PHOTOS — drop files into /photos, then replace each placeholder:
+    <div class="img ph">Frame 01</div>
+      becomes
+    <div class="img"><img src="photos/01.jpg" alt="Short description of the car"></div>
+  Delete any .shot block you don't have a photo for. Three real photos beat six
+  empty frames.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEO Media Productions Inc — Automotive photography &amp; software, Meridian ID</title>
+<meta name="description" content="NEO Media Productions Inc is an automotive photography and software studio in Meridian, Idaho. Vehicle photography, retouching, and the FlatOut motorsport app for iOS and Android.">
+<link rel="canonical" href="https://neomediainc.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NEO Media Productions Inc">
+<meta property="og:description" content="Automotive photography and software studio. Meridian, Idaho.">
+<meta property="og:image" content="https://neomediainc.com/og.png">
+<meta property="og:url" content="https://neomediainc.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization",
+ "name":"NEO Media Productions Inc","url":"https://neomediainc.com/","logo":"https://neomediainc.com/logo.png",
+ "email":"contact@neomediainc.com","telephone":"(727) 336-5895","slogan":"Focus on Excellence",
+ "address":{"@type":"PostalAddress","addressLocality":"Meridian","addressRegion":"ID","addressCountry":"US"}}
+</script>
+<style>
+  :root{
+    --black:#000; --panel:#08060D; --edge:rgba(178,101,255,.22);
+    --neon:#B265FF; --neon-hi:#DCB6FF; --text:#CFC4DE; --dim:#6E6280;
+    --glow-sm:0 0 4px rgba(178,101,255,.85), 0 0 14px rgba(178,101,255,.4);
+    --glow-lg:0 0 6px rgba(220,182,255,.9), 0 0 22px rgba(178,101,255,.55);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black);color:var(--text);
+    font:400 16px/1.7 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+  .label{font-family:Montserrat,sans-serif;font-weight:600;font-size:11px;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--neon);text-shadow:var(--glow-sm)}
+  a:focus-visible{outline:2px solid var(--neon);outline-offset:4px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.88);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--edge)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;
+    padding-block:14px;flex-wrap:wrap}
+  .bar img{height:26px;width:auto;display:block;filter:drop-shadow(0 0 10px rgba(178,101,255,.5))}
+  nav{display:flex;gap:26px;flex-wrap:wrap}
+  nav a{font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--dim);text-decoration:none;padding-bottom:3px;
+    border-bottom:1px solid transparent;transition:color .25s,text-shadow .25s,border-color .25s}
+  nav a:hover,nav a.on{color:var(--neon-hi);text-shadow:var(--glow-sm);border-bottom-color:var(--neon)}
+
+  .hero{padding-block:80px 68px;text-align:center}
+  .hero img{width:min(560px,84vw);height:auto;filter:drop-shadow(0 0 26px rgba(178,101,255,.4))}
+  .hero h1{font-family:Montserrat,sans-serif;font-weight:700;
+    font-size:clamp(25px,4.4vw,44px);line-height:1.14;margin:42px auto 0;max-width:17ch;
+    color:#F3ECFB;text-shadow:var(--glow-lg)}
+  .hero h1 em{font-style:normal;color:var(--neon)}
+  .hero p{margin:22px auto 0;max-width:56ch}
+
+  .rule{height:1px;background:linear-gradient(90deg,transparent,var(--neon),transparent);
+    opacity:.5;box-shadow:0 0 10px rgba(178,101,255,.6)}
+  section{padding-block:72px}
+  h2{font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(23px,3.2vw,32px);
+    color:#F3ECFB;margin:14px 0 10px;text-shadow:var(--glow-sm)}
+  .lede{max-width:60ch;margin-bottom:38px}
+
+  /* services */
+  .svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+  .svc h3{font-family:Montserrat,sans-serif;font-weight:600;font-size:14px;letter-spacing:.06em;
+    color:var(--neon-hi);margin-bottom:8px;padding-top:16px;border-top:1px solid var(--edge)}
+  .svc p{font-size:15px}
+
+  /* photo grid — unlit neon tubes that light on hover */
+  .sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:20px}
+  .shot{border:1px solid var(--edge);background:var(--panel);
+    transition:border-color .35s,box-shadow .35s}
+  .shot .img{aspect-ratio:3/2;overflow:hidden}
+  .shot .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .shot .img.ph{display:flex;align-items:center;justify-content:center;color:#4A4059;
+    font-family:Montserrat,sans-serif;font-weight:500;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;
+    background:repeating-linear-gradient(135deg,#0C0913 0 12px,#08060D 12px 24px)}
+  .cap{padding:10px 14px;border-top:1px solid var(--edge);
+    font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim);transition:color .35s,text-shadow .35s}
+  @media(prefers-reduced-motion:no-preference){
+    .shot:hover{border-color:var(--neon);
+      box-shadow:0 0 18px rgba(178,101,255,.28),inset 0 0 26px rgba(123,63,212,.12)}
+    .shot:hover .cap{color:var(--neon-hi);text-shadow:var(--glow-sm)}
+  }
+
+  /* project */
+  .proj{display:grid;grid-template-columns:1.25fr 1fr;gap:46px;align-items:start}
+  .tag{display:inline-block;border:1px solid var(--neon);color:var(--neon-hi);
+    padding:4px 12px;margin-bottom:16px;border-radius:2px;
+    font-family:Montserrat,sans-serif;font-weight:600;font-size:9px;letter-spacing:.24em;
+    text-transform:uppercase;text-shadow:var(--glow-sm);box-shadow:0 0 12px rgba(178,101,255,.25)}
+  .spec{border-top:1px solid var(--edge)}
+  .spec div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;
+    border-bottom:1px solid var(--edge)}
+  .spec .k{font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim)}
+  .spec .v{color:var(--neon-hi);text-align:right}
+  .feat{margin-top:26px;padding-left:20px}
+  .feat li{margin-bottom:8px}
+  .feat li::marker{color:var(--neon)}
+
+  .studio{text-align:center}
+  .studio .mail{display:inline-block;margin-top:24px;
+    font-family:Montserrat,sans-serif;font-weight:600;font-size:clamp(15px,2.6vw,22px);
+    letter-spacing:.05em;color:var(--neon-hi);text-decoration:none;
+    text-shadow:var(--glow-lg);border-bottom:1px solid rgba(178,101,255,.4);padding-bottom:6px}
+  .studio .mail:hover{border-bottom-color:var(--neon)}
+  .studio .note{margin-top:26px;color:var(--dim);font-size:14px}
+  .biz{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:28px;
+    margin-top:52px;text-align:left;border-top:1px solid var(--edge);padding-top:34px}
+  .biz h3{font-family:Montserrat,sans-serif;font-weight:600;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--neon);margin-bottom:10px;text-shadow:var(--glow-sm)}
+  .biz address{font-style:normal}
+  .biz p,.biz address{font-size:15px;line-height:1.85}
+  .biz a{color:var(--neon);text-decoration:none;border-bottom:1px solid rgba(178,101,255,.3)}
+  .biz a:hover{color:var(--neon-hi);text-shadow:var(--glow-sm)}
+
+  footer{border-top:1px solid var(--edge);padding-block:30px 56px;
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-family:Montserrat,sans-serif;font-weight:500;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim)}
+  footer a{color:var(--dim);text-decoration:none}
+  footer a:hover{color:var(--neon-hi);text-shadow:var(--glow-sm)}
+
+  @media(max-width:720px){
+    .proj{grid-template-columns:1fr;gap:30px}
+    .hero{padding-block:56px 50px}
+    section{padding-block:54px}
+    nav{gap:18px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top"><img src="logo-mark.png" alt="NEO Media Productions"></a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#flatout">FlatOut</a>
+      <a href="#studio">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top" class="wrap hero">
+  <img src="logo.png" alt="NEO Media Productions — Focus on Excellence">
+  <h1>Cars, shot and <em>graded</em> in-house.</h1>
+  <p>NEO Media Productions is an automotive photography and software studio in Meridian, Idaho. We shoot vehicles, grade every frame ourselves, and build the tools we couldn't find.</p>
+</div>
+<div class="rule"></div>
+
+<section id="services" class="wrap">
+  <div class="label">Services</div>
+  <h2>What we do</h2>
+  <p class="lede">Two disciplines, one studio. The photography pays attention to surfaces and light; the software brings the same attention to how things are built.</p>
+  <div class="svc">
+    <div>
+      <h3>Vehicle photography</h3>
+      <p>Full walkarounds for private sellers, dealers, and collectors — exteriors, interiors, engine bays, and detail work. Shot on location around the Treasure Valley.</p>
+    </div>
+    <div>
+      <h3>Retouching &amp; colour grade</h3>
+      <p>Every frame is graded by hand. Reflection cleanup, background work, and a consistent look across a full set so a listing or a portfolio reads as one piece.</p>
+    </div>
+    <div>
+      <h3>Software</h3>
+      <p>Custom application development, built and maintained in-house. FlatOut is our own product; we take selective client work alongside it.</p>
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section id="work" class="wrap">
+  <div class="label">Portfolio</div>
+  <h2>Selected frames</h2>
+  <p class="lede">Owned work, start to finish — capture through colour grade. No stock, no licensed imagery.</p>
+  <div class="sheet">
+    <figure class="shot"><div class="img ph">Frame 01</div><figcaption class="cap">Add caption</figcaption></figure>
+    <figure class="shot"><div class="img ph">Frame 02</div><figcaption class="cap">Add caption</figcaption></figure>
+    <figure class="shot"><div class="img ph">Frame 03</div><figcaption class="cap">Add caption</figcaption></figure>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section id="flatout" class="wrap">
+  <div class="label">Product</div>
+  <div class="proj">
+    <div>
+      <span class="tag">In development</span>
+      <h2>FlatOut</h2>
+      <p class="lede">A motorsport companion app for fans who follow every session, not just the race.</p>
+      <ul class="feat">
+        <li>Season calendar with every session, in your own time zone</li>
+        <li>Driver and constructor standings, updated through the season</li>
+        <li>Circuit maps traced in-house rather than licensed, with sector and start-finish detail</li>
+        <li>A private predictions league you run with friends, scored automatically once results are official</li>
+        <li>Home-screen widgets for the next session and current standings</li>
+      </ul>
+      <p style="margin-top:22px">Built and maintained by NEO Media Productions. Coming to iOS and Android.</p>
+    </div>
+    <div class="spec">
+      <div><span class="k">Platform</span><span class="v">iOS · Android</span></div>
+      <div><span class="k">Status</span><span class="v">In development</span></div>
+      <div><span class="k">Circuits mapped</span><span class="v">22</span></div>
+      <div><span class="k">Publisher</span><span class="v">NEO Media Productions Inc</span></div>
+      <div><span class="k">Support</span><span class="v"><a href="support.html" style="color:var(--neon)">support.html</a></span></div>
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section id="studio" class="wrap studio">
+  <div class="label">Contact</div>
+  <h2>NEO Media Productions Inc</h2>
+  <p class="lede" style="margin:0 auto">Photography commissions, licensing enquiries, and FlatOut support all reach the same inbox. Email is the fastest way to us.</p>
+  <a class="mail" href="mailto:contact@neomediainc.com">contact@neomediainc.com</a>
+
+  <!--
+    City-level location only, by choice. If Apple's verification call asks to see
+    a street address on the site, add one here — but use a commercial /
+    registered-agent address that matches your D-U-N-S record, never your home.
+  -->
+  <div class="biz">
+    <div>
+      <h3>Location</h3>
+      <p>Meridian, Idaho<br>United States<br>
+      Serving the Treasure Valley</p>
+    </div>
+    <div>
+      <h3>Business hours</h3>
+      <p>Monday – Friday<br>9:00 AM – 5:00 PM MT<br>
+      Shoots by appointment</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="mailto:contact@neomediainc.com">contact@neomediainc.com</a><br>
+      <a href="tel:+17273365895">(727) 336-5895</a><br>
+      Email preferred</p>
+    </div>
+  </div>
+
+  <p class="note">We reply within two business days</p>
+</section>
+
+<footer class="wrap">
+  <span>© <span id="yr">2026</span> NEO Media Productions Inc</span>
+  <span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="support.html">Support</a></span>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const links=[...document.querySelectorAll('nav a[href^="#"]')];
+  const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+  addEventListener('scroll',()=>{
+    let i=secs.findIndex(s=>s&&s.getBoundingClientRect().top>140);
+    if(i===-1)i=secs.length; i=Math.max(0,i-1);
+    links.forEach((a,n)=>a.classList.toggle('on',n===i));
+  },{passive:true});
+</script>
+</body>
+</html>
