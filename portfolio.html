@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio — NEO Media Productions Inc</title>
+<meta name="description" content="Automotive photo-editing portfolio — retouching and colour grading by NEO Media Productions Inc, grouped by car.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://neomediainc.com/portfolio.html">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#000; --panel:#08060D; --edge:rgba(178,101,255,.22);
+    --neon:#B265FF; --neon-hi:#DCB6FF; --text:#CFC4DE; --dim:#6E6280;
+    --glow-sm:0 0 4px rgba(178,101,255,.85), 0 0 14px rgba(178,101,255,.4);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--black);color:var(--text);
+    font:400 16px/1.7 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
+  .label{font-family:Montserrat,sans-serif;font-weight:600;font-size:11px;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--neon);text-shadow:var(--glow-sm)}
+  a:focus-visible{outline:2px solid var(--neon);outline-offset:4px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.88);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--edge)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;
+    padding-block:14px;flex-wrap:wrap}
+  .bar > a{border:0}
+  .bar img{height:26px;width:auto;display:block;filter:drop-shadow(0 0 10px rgba(178,101,255,.5))}
+  nav{display:flex;gap:26px;flex-wrap:wrap}
+  nav a{font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--dim);text-decoration:none;padding-bottom:3px;
+    border-bottom:1px solid transparent;transition:color .25s,text-shadow .25s,border-color .25s}
+  nav a:hover,nav a.on{color:var(--neon-hi);text-shadow:var(--glow-sm);border-bottom-color:var(--neon)}
+
+  .intro{padding-block:56px 10px}
+  h1{font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(26px,4.2vw,40px);
+    color:#F3ECFB;margin:12px 0 10px;text-shadow:var(--glow-sm)}
+  .lede{max-width:60ch;color:var(--text)}
+
+  .group{padding-block:44px}
+  .ghead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+  .ghead h2{font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(19px,2.8vw,25px);
+    color:#F3ECFB;text-shadow:var(--glow-sm)}
+  .gsub{color:var(--dim);font-size:14px}
+
+  .sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:20px}
+  .shot{border:1px solid var(--edge);background:var(--panel);
+    transition:border-color .35s,box-shadow .35s}
+  .shot .img{aspect-ratio:3/2;overflow:hidden}
+  .shot .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .shot .img.ph{display:flex;align-items:center;justify-content:center;color:#4A4059;
+    font-family:Montserrat,sans-serif;font-weight:500;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;
+    background:repeating-linear-gradient(135deg,#0C0913 0 12px,#08060D 12px 24px)}
+  .cap{padding:10px 14px;border-top:1px solid var(--edge);
+    font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim);transition:color .35s,text-shadow .35s}
+  @media(prefers-reduced-motion:no-preference){
+    .shot:hover{border-color:var(--neon);
+      box-shadow:0 0 18px rgba(178,101,255,.28),inset 0 0 26px rgba(123,63,212,.12)}
+    .shot:hover .cap{color:var(--neon-hi);text-shadow:var(--glow-sm)}
+  }
+
+  /* masonry gallery — portrait & landscape shots keep their real proportions */
+  .gallery{column-width:300px;column-gap:16px}
+  .gallery .shot{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 16px;
+    display:block;border:1px solid var(--edge);background:var(--panel);overflow:hidden;
+    transition:border-color .35s,box-shadow .35s}
+  .gallery .shot img{width:100%;height:auto;display:block}
+  @media(prefers-reduced-motion:no-preference){
+    .gallery .shot:hover{border-color:var(--neon);box-shadow:0 0 20px rgba(178,101,255,.3)}
+  }
+
+  .rule{height:1px;background:linear-gradient(90deg,transparent,var(--neon),transparent);
+    opacity:.5;box-shadow:0 0 10px rgba(178,101,255,.6)}
+
+  footer{border-top:1px solid var(--edge);padding-block:30px 56px;
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-family:Montserrat,sans-serif;font-weight:500;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--dim)}
+  footer a{color:var(--dim);text-decoration:none}
+  footer a:hover{color:var(--neon-hi);text-shadow:var(--glow-sm)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="index.html"><img src="logo-mark.png" alt="NEO Media Productions"></a>
+    <nav>
+      <a href="index.html#services">Services</a>
+      <a href="portfolio.html" class="on">Portfolio</a>
+      <a href="index.html#flatout">FlatOut</a>
+      <a href="index.html#studio">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="wrap intro">
+  <div class="label">Portfolio</div>
+  <h1>Selected work</h1>
+  <p class="lede">Retouching and colour grading, grouped by car. Every frame edited in-house — real client work, no stock.</p>
+</section>
+
+<!-- ── CAR GROUP ──────────────────────────────────────────────────────────────
+     To add another car: copy a <section class="wrap group"> … </section> block,
+     put a <div class="rule"></div> between cars, set the <h2> and note, and list
+     each photo inside <div class="gallery"> as
+       <figure class="shot"><img src="photos/NAME.jpg" alt="…" loading="lazy"></figure>
+     The gallery is masonry — portrait and landscape both keep their real shape.
+─────────────────────────────────────────────────────────────────────────────── -->
+<section class="wrap group">
+  <div class="ghead">
+    <h2>BMW M3 CS</h2>
+    <p class="gsub">Signal Green · exterior, wheels &amp; interior — colour grade and cleanup</p>
+  </div>
+  <div class="gallery">
+    <figure class="shot"><img src="photos/m3cs-01.jpg" alt="BMW M3 CS, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-02.jpg" alt="M3 CS front wheel and fender" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-03.jpg" alt="M3 CS hood and BMW roundel, overhead" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-04.jpg" alt="M3 CS forged wheel at golden hour" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-05.jpg" alt="M3 CS rear badge and taillight" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-06.jpg" alt="BMW M3 CS, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-07.jpg" alt="M3 CS front wheel, profile" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-08.jpg" alt="M3 CS carbon bucket seat" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-09.jpg" alt="M3 CS steering wheel through the window" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-10.jpg" alt="M3 CS front detail" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-11.jpg" alt="M3 CS cockpit and steering wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-12.jpg" alt="M3 CS side profile and wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/m3cs-13.jpg" alt="M3 CS centre console detail" loading="lazy"></figure>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="wrap group">
+  <div class="ghead">
+    <h2>Cadillac CT5-V</h2>
+    <p class="gsub">Electric Blue · exterior, interior &amp; details — colour grade and cleanup</p>
+  </div>
+  <div class="gallery">
+    <figure class="shot"><img src="photos/ct5v-01.jpg" alt="Cadillac CT5-V, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-02.jpg" alt="Cadillac CT5-V, side profile" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-03.jpg" alt="Cadillac CT5-V front detail" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-04.jpg" alt="Cadillac CT5-V mirror and V-Series badge" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-05.jpg" alt="Cadillac CT5-V front wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-06.jpg" alt="Cadillac CT5-V, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-07.jpg" alt="Cadillac CT5-V interior and steering wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-08.jpg" alt="Cadillac CT5-V steering wheel through the window" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-09.jpg" alt="Cadillac CT5-V rear badge" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ct5v-10.jpg" alt="Cadillac CT5-V, rear three-quarter" loading="lazy"></figure>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="wrap group">
+  <div class="ghead">
+    <h2>Cadillac CTS-V</h2>
+    <p class="gsub">Satin green · beachfront, golden hour &amp; night — colour grade and cleanup</p>
+  </div>
+  <div class="gallery">
+    <figure class="shot"><img src="photos/ctsv-01.jpg" alt="Cadillac CTS-V, front" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-02.jpg" alt="Cadillac CTS-V, side profile at the waterfront" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-03.jpg" alt="Cadillac CTS-V, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-04.jpg" alt="Cadillac CTS-V front wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-05.jpg" alt="Cadillac CTS-V, side profile" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-06.jpg" alt="Cadillac CTS-V forged carbon mirror" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-07.jpg" alt="Cadillac CTS-V, rear three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-08.jpg" alt="Cadillac CTS-V rear at sunset" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-09.jpg" alt="Cadillac CTS-V, rear" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/ctsv-10.jpg" alt="Cadillac CTS-V at night" loading="lazy"></figure>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="wrap group">
+  <div class="ghead">
+    <h2>Cadillac Escalade-V</h2>
+    <p class="gsub">Radiant red · detailing process &amp; beauty — colour grade and cleanup</p>
+  </div>
+  <div class="gallery">
+    <figure class="shot"><img src="photos/esc-01.jpg" alt="Cadillac Escalade-V, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/esc-02.jpg" alt="Detailer polishing a Cadillac Escalade-V" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/esc-03.jpg" alt="Cadillac Escalade-V in the detailing studio" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/esc-04.jpg" alt="Machine polishing the Escalade-V paint" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/esc-05.jpg" alt="Cadillac Escalade-V V-Series badge and wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/esc-06.jpg" alt="Applying paint protection film to the mirror" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/esc-07.jpg" alt="Cadillac Escalade-V wheel and red caliper" loading="lazy"></figure>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="wrap group">
+  <div class="ghead">
+    <h2>Ferrari 296 GTB</h2>
+    <p class="gsub">Black · exterior, details &amp; interior — colour grade and cleanup</p>
+  </div>
+  <div class="gallery">
+    <figure class="shot"><img src="photos/296-01.jpg" alt="Ferrari 296 GTB, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-02.jpg" alt="Ferrari 296 GTB, side profile" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-03.jpg" alt="Ferrari 296 GTB, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-04.jpg" alt="Ferrari 296 GTB, rear three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-05.jpg" alt="Ferrari 296 GTB rear intake and wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-06.jpg" alt="Ferrari 296 GTB, rear" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-07.jpg" alt="Ferrari 296 GTB front wheel and shield" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-08.jpg" alt="Ferrari 296 GTB flying buttress detail" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-09.jpg" alt="Ferrari 296 GTB carbon racing seat" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-10.jpg" alt="Ferrari 296 GTB steering wheel and cockpit" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/296-11.jpg" alt="Ferrari 296 GTB interior" loading="lazy"></figure>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="wrap group">
+  <div class="ghead">
+    <h2>Ferrari 458 Italia</h2>
+    <p class="gsub">Black · exterior, engine bay &amp; interior — colour grade and cleanup</p>
+  </div>
+  <div class="gallery">
+    <figure class="shot"><img src="photos/458-01.jpg" alt="Ferrari 458 Italia, side profile" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-02.jpg" alt="Ferrari 458 Italia, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-03.jpg" alt="Ferrari 458 Italia engine bay" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-04.jpg" alt="Ferrari 458 Italia front wheel and shield" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-05.jpg" alt="Ferrari 458 Italia, rear three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-06.jpg" alt="Ferrari 458 Italia steering wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-07.jpg" alt="Ferrari 458 Italia shield badge" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-08.jpg" alt="Ferrari 458 Italia, front" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-09.jpg" alt="Ferrari 458 Italia dashboard badge" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-10.jpg" alt="Ferrari 458 Italia carbon-ceramic brake caliper" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/458-11.jpg" alt="Ferrari 458 Italia script and reflection" loading="lazy"></figure>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section class="wrap group">
+  <div class="ghead">
+    <h2>Ferrari 812 Superfast</h2>
+    <p class="gsub">Black · yellow-accent build, waterfront — colour grade and cleanup</p>
+  </div>
+  <div class="gallery">
+    <figure class="shot"><img src="photos/812-01.jpg" alt="Ferrari 812 Superfast, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-02.jpg" alt="Ferrari 812 Superfast, rear three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-03.jpg" alt="Ferrari 812 Superfast steering wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-04.jpg" alt="Ferrari 812 Superfast front wheel and shield" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-05.jpg" alt="Ferrari 812 Superfast dashboard badge" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-06.jpg" alt="Ferrari 812 Superfast, rear three-quarter at the waterfront" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-07.jpg" alt="Ferrari 812 Superfast interior" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-08.jpg" alt="Ferrari 812 Superfast seat" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-09.jpg" alt="Ferrari 812 Superfast seat detail" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-10.jpg" alt="Ferrari 812 Superfast launch controls" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-11.jpg" alt="Ferrari 812 Superfast cockpit" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-12.jpg" alt="Ferrari 812 Superfast tachometer" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-13.jpg" alt="Ferrari 812 Superfast Ferrari dash badge" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-14.jpg" alt="Ferrari 812 Superfast gear controls and paddle shifter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/812-15.jpg" alt="Ferrari 812 Superfast launch controls and gear selector" loading="lazy"></figure>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© <span id="yr">2026</span> NEO Media Productions Inc</span>
+  <span><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="support.html">Support</a></span>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>
