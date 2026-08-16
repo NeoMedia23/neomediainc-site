@@ -78,6 +78,17 @@
     .gallery .shot:hover{border-color:var(--neon);box-shadow:0 0 20px rgba(178,101,255,.3)}
   }
 
+  /* collapsed gallery: show only the 3 best; the "Show all" button expands it
+     (accordion — opening one collapses any other that's open) */
+  .gallery.collapsed .shot:nth-child(n+4){display:none}
+  .showall{display:block;margin:24px auto 0;cursor:pointer;width:max-content;
+    background:transparent;border:1px solid var(--neon);color:var(--neon-hi);
+    font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;padding:11px 22px;border-radius:2px;text-shadow:var(--glow-sm);
+    box-shadow:0 0 12px rgba(178,101,255,.2);transition:background .25s,color .25s,box-shadow .25s}
+  .showall:hover{background:rgba(178,101,255,.12);color:#F3ECFB;box-shadow:0 0 18px rgba(178,101,255,.4)}
+  .showall:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
+
   .rule{height:1px;background:linear-gradient(90deg,transparent,var(--neon),transparent);
     opacity:.5;box-shadow:0 0 10px rgba(178,101,255,.6)}
 
@@ -121,7 +132,7 @@
     <h2>BMW M3 CS</h2>
     <p class="gsub">Signal Green · exterior, wheels &amp; interior — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/m3cs-01.jpg" alt="BMW M3 CS, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/m3cs-02.jpg" alt="M3 CS front wheel and fender" loading="lazy"></figure>
     <figure class="shot"><img src="photos/m3cs-03.jpg" alt="M3 CS hood and BMW roundel, overhead" loading="lazy"></figure>
@@ -136,6 +147,7 @@
     <figure class="shot"><img src="photos/m3cs-12.jpg" alt="M3 CS side profile and wheel" loading="lazy"></figure>
     <figure class="shot"><img src="photos/m3cs-13.jpg" alt="M3 CS centre console detail" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -144,7 +156,7 @@
     <h2>Cadillac CTS-V</h2>
     <p class="gsub">Satin green · beachfront, golden hour &amp; night — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/ctsv-01.jpg" alt="Cadillac CTS-V, front" loading="lazy"></figure>
     <figure class="shot"><img src="photos/ctsv-02.jpg" alt="Cadillac CTS-V, side profile at the waterfront" loading="lazy"></figure>
     <figure class="shot"><img src="photos/ctsv-03.jpg" alt="Cadillac CTS-V, front three-quarter" loading="lazy"></figure>
@@ -156,6 +168,7 @@
     <figure class="shot"><img src="photos/ctsv-09.jpg" alt="Cadillac CTS-V, rear" loading="lazy"></figure>
     <figure class="shot"><img src="photos/ctsv-10.jpg" alt="Cadillac CTS-V at night" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -164,7 +177,7 @@
     <h2>Cadillac Escalade-V</h2>
     <p class="gsub">Radiant red · detailing process &amp; beauty — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/esc-01.jpg" alt="Cadillac Escalade-V, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/esc-02.jpg" alt="Detailer polishing a Cadillac Escalade-V" loading="lazy"></figure>
     <figure class="shot"><img src="photos/esc-03.jpg" alt="Cadillac Escalade-V in the detailing studio" loading="lazy"></figure>
@@ -173,6 +186,7 @@
     <figure class="shot"><img src="photos/esc-06.jpg" alt="Applying paint protection film to the mirror" loading="lazy"></figure>
     <figure class="shot"><img src="photos/esc-07.jpg" alt="Cadillac Escalade-V wheel and red caliper" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -181,7 +195,7 @@
     <h2>Ferrari 296 GTB</h2>
     <p class="gsub">Black · exterior, details &amp; interior — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/296-01.jpg" alt="Ferrari 296 GTB, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/296-02.jpg" alt="Ferrari 296 GTB, side profile" loading="lazy"></figure>
     <figure class="shot"><img src="photos/296-03.jpg" alt="Ferrari 296 GTB, front three-quarter" loading="lazy"></figure>
@@ -194,6 +208,7 @@
     <figure class="shot"><img src="photos/296-10.jpg" alt="Ferrari 296 GTB steering wheel and cockpit" loading="lazy"></figure>
     <figure class="shot"><img src="photos/296-11.jpg" alt="Ferrari 296 GTB interior" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -202,7 +217,7 @@
     <h2>Ferrari 458 Italia</h2>
     <p class="gsub">Black · exterior, engine bay &amp; interior — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/458-01.jpg" alt="Ferrari 458 Italia, side profile" loading="lazy"></figure>
     <figure class="shot"><img src="photos/458-02.jpg" alt="Ferrari 458 Italia, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/458-03.jpg" alt="Ferrari 458 Italia engine bay" loading="lazy"></figure>
@@ -215,6 +230,7 @@
     <figure class="shot"><img src="photos/458-10.jpg" alt="Ferrari 458 Italia carbon-ceramic brake caliper" loading="lazy"></figure>
     <figure class="shot"><img src="photos/458-11.jpg" alt="Ferrari 458 Italia script and reflection" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -223,7 +239,7 @@
     <h2>Ferrari 812 Superfast</h2>
     <p class="gsub">Black · yellow-accent build, waterfront — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/812-01.jpg" alt="Ferrari 812 Superfast, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/812-02.jpg" alt="Ferrari 812 Superfast, rear three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/812-03.jpg" alt="Ferrari 812 Superfast steering wheel" loading="lazy"></figure>
@@ -240,6 +256,7 @@
     <figure class="shot"><img src="photos/812-14.jpg" alt="Ferrari 812 Superfast gear controls and paddle shifter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/812-15.jpg" alt="Ferrari 812 Superfast launch controls and gear selector" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -248,7 +265,7 @@
     <h2>McLaren GT</h2>
     <p class="gsub">McLaren Orange · detail process &amp; beauty — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/mcl-01.jpg" alt="McLaren GT with dihedral doors open" loading="lazy"></figure>
     <figure class="shot"><img src="photos/mcl-02.jpg" alt="McLaren GT in the detailing studio" loading="lazy"></figure>
     <figure class="shot"><img src="photos/mcl-03.jpg" alt="McLaren GT, front three-quarter" loading="lazy"></figure>
@@ -261,6 +278,7 @@
     <figure class="shot"><img src="photos/mcl-10.jpg" alt="Detailer polishing a McLaren GT" loading="lazy"></figure>
     <figure class="shot"><img src="photos/mcl-11.jpg" alt="Detailer working on a McLaren GT" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -269,7 +287,7 @@
     <h2>BMW E30</h2>
     <p class="gsub">325iX · silver over houndstooth, period BBS wheels — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/e30-01.jpg" alt="BMW E30 325iX, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/e30-02.jpg" alt="BMW E30 325iX, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/e30-03.jpg" alt="BMW E30 325iX BBS wheel" loading="lazy"></figure>
@@ -280,6 +298,7 @@
     <figure class="shot"><img src="photos/e30-08.jpg" alt="BMW E30 325iX interior through the window" loading="lazy"></figure>
     <figure class="shot"><img src="photos/e30-09.jpg" alt="BMW E30 325iX, front" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -288,7 +307,7 @@
     <h2>McLaren 720S</h2>
     <p class="gsub">White · dihedral doors, storm sky — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/m720-01.jpg" alt="McLaren 720S, rear three-quarter with doors open" loading="lazy"></figure>
     <figure class="shot"><img src="photos/m720-02.jpg" alt="McLaren 720S, front with dihedral doors open" loading="lazy"></figure>
     <figure class="shot"><img src="photos/m720-03.jpg" alt="McLaren 720S, front three-quarter with doors open" loading="lazy"></figure>
@@ -298,6 +317,7 @@
     <figure class="shot"><img src="photos/m720-07.jpg" alt="McLaren 720S rear quarter detail" loading="lazy"></figure>
     <figure class="shot"><img src="photos/m720-08.jpg" alt="McLaren 720S, front" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -306,7 +326,7 @@
     <h2>Porsche 911 GT3</h2>
     <p class="gsub">Racing Yellow · 6-speed manual — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/gt3-01.jpg" alt="Porsche 911 GT3, side profile" loading="lazy"></figure>
     <figure class="shot"><img src="photos/gt3-02.jpg" alt="Porsche 911 GT3, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/gt3-03.jpg" alt="Porsche 911 GT3, rear three-quarter" loading="lazy"></figure>
@@ -319,6 +339,7 @@
     <figure class="shot"><img src="photos/gt3-10.jpg" alt="Porsche 911 GT3 interior" loading="lazy"></figure>
     <figure class="shot"><img src="photos/gt3-11.jpg" alt="Porsche 911 GT3, front three-quarter" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -327,7 +348,7 @@
     <h2>Porsche 911 GT3 RS</h2>
     <p class="gsub">Blue · Weissach package, bronze magnesium wheels — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/gt3rs-01.jpg" alt="Porsche 911 GT3 RS, rear three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/gt3rs-02.jpg" alt="Porsche 911 GT3 RS, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/gt3rs-03.jpg" alt="Porsche 911 GT3 RS, side profile" loading="lazy"></figure>
@@ -339,6 +360,7 @@
     <figure class="shot"><img src="photos/gt3rs-09.jpg" alt="Porsche 911 GT3 RS interior" loading="lazy"></figure>
     <figure class="shot"><img src="photos/gt3rs-10.jpg" alt="Porsche 911 GT3 RS shifter and controls" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 <div class="rule"></div>
 
@@ -347,7 +369,7 @@
     <h2>RAM TRX</h2>
     <p class="gsub">Black over bronze accents — colour grade and cleanup</p>
   </div>
-  <div class="gallery">
+  <div class="gallery collapsed">
     <figure class="shot"><img src="photos/trx-01.jpg" alt="RAM TRX, front three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/trx-02.jpg" alt="RAM TRX, rear three-quarter" loading="lazy"></figure>
     <figure class="shot"><img src="photos/trx-03.jpg" alt="RAM TRX bronze wheel" loading="lazy"></figure>
@@ -356,12 +378,25 @@
     <figure class="shot"><img src="photos/trx-06.jpg" alt="RAM TRX grille and hood scoop" loading="lazy"></figure>
     <figure class="shot"><img src="photos/trx-07.jpg" alt="RAM TRX, front" loading="lazy"></figure>
   </div>
+  <button class="showall" type="button">Show all</button>
 </section>
 
 <footer class="wrap">
   <span>© <span id="yr">2026</span> NEO Media Productions Inc</span>
   <span><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="support.html">Support</a></span>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script>
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  document.querySelectorAll('.showall').forEach(function(btn){
+    var gallery=btn.previousElementSibling;
+    if(!gallery||gallery.querySelectorAll('.shot').length<=3){btn.remove();return;}
+    btn.addEventListener('click',function(){
+      var expand=gallery.classList.contains('collapsed');
+      document.querySelectorAll('.gallery').forEach(function(g){g.classList.add('collapsed');});
+      document.querySelectorAll('.showall').forEach(function(b){b.textContent='Show all';});
+      if(expand){gallery.classList.remove('collapsed');btn.textContent='Show less';}
+    });
+  });
+</script>
 </body>
 </html>
