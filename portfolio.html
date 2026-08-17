@@ -15,86 +15,71 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --black:#000; --panel:#08060D; --edge:rgba(178,101,255,.22);
-    --neon:#B265FF; --neon-hi:#DCB6FF; --text:#CFC4DE; --dim:#6E6280;
-    --glow-sm:0 0 4px rgba(178,101,255,.85), 0 0 14px rgba(178,101,255,.4);
+    --black:#060309; --panel:rgba(178,101,255,.05); --edge:rgba(178,101,255,.20);
+    --neon:#B265FF; --neon-hi:#DCB6FF; --text:#E8E1F4; --dim:#AA9EC1;
+    --glow-sm:0 0 4px rgba(178,101,255,.7), 0 0 16px rgba(178,101,255,.35);
+    --disp:Montserrat,sans-serif; --body:Barlow,system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--black);color:var(--text);
-    font:400 16px/1.7 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
-  .label{font-family:Montserrat,sans-serif;font-weight:600;font-size:11px;
-    letter-spacing:.32em;text-transform:uppercase;color:var(--neon);text-shadow:var(--glow-sm)}
+  html{scroll-behavior:smooth}
+  body{background:var(--black);color:var(--text);overflow-x:hidden;
+    font:400 18px/1.75 var(--body);-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(78% 44% at 50% -6%, rgba(178,101,255,.14), transparent 62%)}
+  .wrap{max-width:1160px;margin:0 auto;padding-inline:28px}
+  .label{font-family:var(--disp);font-weight:600;font-size:13px;
+    letter-spacing:.26em;text-transform:uppercase;color:var(--neon);text-shadow:var(--glow-sm)}
   a:focus-visible{outline:2px solid var(--neon);outline-offset:4px}
 
-  header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.88);
-    backdrop-filter:blur(10px);border-bottom:1px solid var(--edge)}
-  .bar{display:flex;align-items:center;justify-content:space-between;gap:18px;
-    padding-block:14px;flex-wrap:wrap}
+  header{position:sticky;top:0;z-index:20;background:rgba(6,3,9,.72);
+    backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid var(--edge)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding-block:18px;flex-wrap:wrap}
   .bar > a{border:0}
-  .bar img{height:26px;width:auto;display:block;filter:drop-shadow(0 0 10px rgba(178,101,255,.5))}
-  nav{display:flex;gap:26px;flex-wrap:wrap}
-  nav a{font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.22em;
-    text-transform:uppercase;color:var(--dim);text-decoration:none;padding-bottom:3px;
+  .bar img{height:34px;width:auto;display:block;filter:drop-shadow(0 0 12px rgba(178,101,255,.5))}
+  nav{display:flex;gap:30px;flex-wrap:wrap}
+  nav a{font-family:var(--disp);font-weight:600;font-size:12.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--dim);text-decoration:none;padding-bottom:4px;
     border-bottom:1px solid transparent;transition:color .25s,text-shadow .25s,border-color .25s}
   nav a:hover,nav a.on{color:var(--neon-hi);text-shadow:var(--glow-sm);border-bottom-color:var(--neon)}
 
-  .intro{padding-block:56px 10px}
-  h1{font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(26px,4.2vw,40px);
-    color:#F3ECFB;margin:12px 0 10px;text-shadow:var(--glow-sm)}
-  .lede{max-width:60ch;color:var(--text)}
+  .intro{padding-block:76px 16px}
+  h1{font-family:var(--disp);font-weight:800;letter-spacing:-.015em;font-size:clamp(34px,5vw,56px);
+    line-height:1.06;color:#F7F2FD;margin:14px 0 12px;text-shadow:var(--glow-sm)}
+  .lede{max-width:64ch;color:var(--dim);font-size:clamp(18px,2vw,21px)}
 
-  .group{padding-block:44px}
-  .ghead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:22px}
-  .ghead h2{font-family:Montserrat,sans-serif;font-weight:700;font-size:clamp(19px,2.8vw,25px);
-    color:#F3ECFB;text-shadow:var(--glow-sm)}
-  .gsub{color:var(--dim);font-size:14px}
-
-  .sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:20px}
-  .shot{border:1px solid var(--edge);background:var(--panel);
-    transition:border-color .35s,box-shadow .35s}
-  .shot .img{aspect-ratio:3/2;overflow:hidden}
-  .shot .img img{width:100%;height:100%;object-fit:cover;display:block}
-  .shot .img.ph{display:flex;align-items:center;justify-content:center;color:#4A4059;
-    font-family:Montserrat,sans-serif;font-weight:500;font-size:10px;letter-spacing:.2em;
-    text-transform:uppercase;
-    background:repeating-linear-gradient(135deg,#0C0913 0 12px,#08060D 12px 24px)}
-  .cap{padding:10px 14px;border-top:1px solid var(--edge);
-    font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--dim);transition:color .35s,text-shadow .35s}
-  @media(prefers-reduced-motion:no-preference){
-    .shot:hover{border-color:var(--neon);
-      box-shadow:0 0 18px rgba(178,101,255,.28),inset 0 0 26px rgba(123,63,212,.12)}
-    .shot:hover .cap{color:var(--neon-hi);text-shadow:var(--glow-sm)}
-  }
+  .group{padding-block:58px}
+  .ghead{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+  .ghead h2{font-family:var(--disp);font-weight:700;font-size:clamp(24px,3.2vw,34px);
+    letter-spacing:-.01em;color:#F7F2FD;text-shadow:var(--glow-sm)}
+  .gsub{color:var(--dim);font-size:16px}
 
   /* masonry gallery — portrait & landscape shots keep their real proportions */
-  .gallery{column-width:300px;column-gap:16px}
-  .gallery .shot{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 16px;
-    display:block;border:1px solid var(--edge);background:var(--panel);overflow:hidden;
-    transition:border-color .35s,box-shadow .35s}
+  .gallery{column-width:320px;column-gap:18px}
+  .gallery .shot{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 18px;
+    display:block;border:1px solid var(--edge);background:var(--panel);overflow:hidden;border-radius:16px;
+    transition:border-color .35s,box-shadow .35s,transform .35s}
   .gallery .shot img{width:100%;height:auto;display:block}
   @media(prefers-reduced-motion:no-preference){
-    .gallery .shot:hover{border-color:var(--neon);box-shadow:0 0 20px rgba(178,101,255,.3)}
+    .gallery .shot:hover{border-color:var(--neon);transform:translateY(-3px);
+      box-shadow:0 16px 42px rgba(0,0,0,.45),0 0 24px rgba(178,101,255,.28)}
   }
 
-  /* collapsed gallery: show only the 3 best; the "Show all" button expands it
-     (accordion — opening one collapses any other that's open) */
+  /* collapsed gallery: show only the 3 best; "Show all" expands (accordion) */
   .gallery.collapsed .shot:nth-child(n+4){display:none}
-  .showall{display:block;margin:24px auto 0;cursor:pointer;width:max-content;
+  .showall{display:block;margin:30px auto 0;cursor:pointer;width:max-content;
     background:transparent;border:1px solid var(--neon);color:var(--neon-hi);
-    font-family:Montserrat,sans-serif;font-weight:600;font-size:10px;letter-spacing:.2em;
-    text-transform:uppercase;padding:11px 22px;border-radius:2px;text-shadow:var(--glow-sm);
-    box-shadow:0 0 12px rgba(178,101,255,.2);transition:background .25s,color .25s,box-shadow .25s}
-  .showall:hover{background:rgba(178,101,255,.12);color:#F3ECFB;box-shadow:0 0 18px rgba(178,101,255,.4)}
+    font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;padding:13px 26px;border-radius:100px;text-shadow:var(--glow-sm);
+    box-shadow:0 0 14px rgba(178,101,255,.22);transition:background .25s,color .25s,box-shadow .25s,transform .25s}
+  .showall:hover{background:rgba(178,101,255,.12);color:#F7F2FD;transform:translateY(-2px);box-shadow:0 0 20px rgba(178,101,255,.45)}
   .showall:focus-visible{outline:2px solid var(--neon);outline-offset:3px}
 
   .rule{height:1px;background:linear-gradient(90deg,transparent,var(--neon),transparent);
-    opacity:.5;box-shadow:0 0 10px rgba(178,101,255,.6)}
+    opacity:.4;box-shadow:0 0 12px rgba(178,101,255,.5)}
 
-  footer{border-top:1px solid var(--edge);padding-block:30px 56px;
-    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
-    font-family:Montserrat,sans-serif;font-weight:500;font-size:10px;letter-spacing:.2em;
+  footer{border-top:1px solid var(--edge);padding-block:38px 68px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-family:var(--disp);font-weight:500;font-size:12px;letter-spacing:.15em;
     text-transform:uppercase;color:var(--dim)}
   footer a{color:var(--dim);text-decoration:none}
   footer a:hover{color:var(--neon-hi);text-shadow:var(--glow-sm)}
@@ -377,6 +362,28 @@
     <figure class="shot"><img src="photos/trx-05.jpg" alt="RAM TRX, rear" loading="lazy"></figure>
     <figure class="shot"><img src="photos/trx-06.jpg" alt="RAM TRX grille and hood scoop" loading="lazy"></figure>
     <figure class="shot"><img src="photos/trx-07.jpg" alt="RAM TRX, front" loading="lazy"></figure>
+  </div>
+  <button class="showall" type="button">Show all</button>
+</section>
+<div class="rule"></div>
+
+<section class="wrap group">
+  <div class="ghead">
+    <h2>Bentley Continental GT</h2>
+    <p class="gsub">White over cognac interior — colour grade and cleanup</p>
+  </div>
+  <div class="gallery collapsed">
+    <figure class="shot"><img src="photos/bent-01.jpg" alt="Bentley Continental GT, side profile" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-02.jpg" alt="Bentley Continental GT, front three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-03.jpg" alt="Bentley Continental GT front wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-04.jpg" alt="Bentley Continental GT, rear three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-05.jpg" alt="Bentley Continental GT winged B badge" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-06.jpg" alt="Bentley Continental GT, rear three-quarter" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-07.jpg" alt="Bentley Continental GT interior and steering wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-08.jpg" alt="Bentley Continental GT rear wheel" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-09.jpg" alt="Bentley Continental GT cognac interior" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-10.jpg" alt="Bentley Continental GT badge" loading="lazy"></figure>
+    <figure class="shot"><img src="photos/bent-11.jpg" alt="Bentley Continental GT interior" loading="lazy"></figure>
   </div>
   <button class="showall" type="button">Show all</button>
 </section>
