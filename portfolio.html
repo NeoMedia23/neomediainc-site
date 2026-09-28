@@ -53,6 +53,20 @@
     letter-spacing:-.01em;color:#F7F2FD;text-shadow:var(--glow-sm)}
   .gsub{color:var(--dim);font-size:16px}
 
+  /* FlatOut app showcase */
+  .applead{max-width:66ch;color:var(--dim);font-size:clamp(17px,1.9vw,19px);margin:0 0 4px}
+  .applinks{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px}
+  .applinks a{font-family:var(--disp);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--neon-hi);text-decoration:none;border-bottom:1px solid rgba(178,101,255,.4);padding-bottom:5px;text-shadow:var(--glow-sm)}
+  .applinks a:hover{color:#F7F2FD;border-bottom-color:var(--neon)}
+  .appshots{display:flex;gap:18px;justify-content:flex-start;flex-wrap:wrap;margin-top:40px}
+  .appshot{width:min(240px,72vw);border:1px solid var(--edge);border-radius:20px;overflow:hidden;background:var(--panel);
+    box-shadow:0 16px 42px rgba(0,0,0,.42);transition:border-color .35s,transform .35s,box-shadow .35s}
+  .appshot img{width:100%;height:auto;display:block}
+  @media(prefers-reduced-motion:no-preference){
+    .appshot:hover{border-color:var(--neon);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 30px rgba(178,101,255,.25)}
+  }
+
   /* masonry gallery — portrait & landscape shots keep their real proportions */
   .gallery{column-width:320px;column-gap:18px}
   .gallery .shot{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 18px;
@@ -386,6 +400,25 @@
     <figure class="shot"><img src="photos/bent-11.jpg" width="1500" height="2000" alt="Bentley Continental GT interior" loading="lazy"></figure>
   </div>
   <button class="showall" type="button">Show all</button>
+</section>
+
+<div class="rule"></div>
+
+<section class="wrap group">
+  <div class="ghead">
+    <h2>FlatOut · the app</h2>
+    <p class="gsub">Live on the App Store — designed, built &amp; written in-house</p>
+  </div>
+  <p class="applead">Not everything NEO Media makes is a photo. FlatOut is our own Formula 1 companion for iPhone — UI and interaction design, the brand system and app icon, all the copy, six-language localization, and the marketing site, shipped end to end.</p>
+  <div class="appshots">
+    <div class="appshot"><img src="photos/flatout-schedule.jpg" width="660" height="1433" alt="FlatOut — schedule with every session in your time zone" loading="lazy"></div>
+    <div class="appshot"><img src="photos/flatout-pitwall.jpg" width="660" height="1433" alt="FlatOut — PitWall at-a-glance dashboard" loading="lazy"></div>
+    <div class="appshot"><img src="photos/flatout-circuit.jpg" width="660" height="1433" alt="FlatOut — hand-drawn circuit map, colour-coded by sector" loading="lazy"></div>
+  </div>
+  <div class="applinks">
+    <a href="https://flatoutapp.app" target="_blank" rel="noopener">Visit flatoutapp.app ↗</a>
+    <a href="https://apps.apple.com/app/id6802510938" target="_blank" rel="noopener">Download on the App Store ↗</a>
+  </div>
 </section>
 
 <footer class="wrap">

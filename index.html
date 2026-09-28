@@ -129,6 +129,17 @@
   .feat{margin-top:30px;padding-left:22px}
   .feat li{margin-bottom:12px;font-size:17.5px}
   .feat li::marker{color:var(--neon)}
+  .applinks{display:flex;gap:26px;flex-wrap:wrap;margin-top:30px}
+  .applinks a{font-family:Montserrat,sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--neon-hi);text-decoration:none;border-bottom:1px solid rgba(178,101,255,.4);padding-bottom:5px;text-shadow:var(--glow-sm)}
+  .applinks a:hover{color:#F7F2FD;border-bottom-color:var(--neon)}
+  .appshots{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+  .appshot{width:min(240px,72vw);border:1px solid var(--edge);border-radius:20px;overflow:hidden;background:var(--panel);
+    box-shadow:0 16px 42px rgba(0,0,0,.42);transition:border-color .35s,transform .35s,box-shadow .35s}
+  .appshot img{width:100%;height:auto;display:block}
+  @media(prefers-reduced-motion:no-preference){
+    .appshot:hover{border-color:var(--neon);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 30px rgba(178,101,255,.25)}
+  }
 
   .studio{text-align:center}
   .studio .mail{display:inline-block;margin-top:30px;
@@ -221,9 +232,9 @@
   <div class="label">Product</div>
   <div class="proj">
     <div>
-      <span class="tag">In development</span>
+      <span class="tag">Live on the App Store</span>
       <h2>FlatOut</h2>
-      <p class="lede">A Formula 1 companion app for fans who follow every session, not just the race.</p>
+      <p class="lede">A Formula 1 companion app for fans who follow every session, not just the race — designed, written and shipped end to end at NEO Media.</p>
       <ul class="feat">
         <li>Season calendar with every session, in your own time zone</li>
         <li>Driver and constructor standings, updated through the season</li>
@@ -231,15 +242,25 @@
         <li>Race weekend, team and driver ratings</li>
         <li>Home-screen widgets for the next session and current standings</li>
       </ul>
-      <p style="margin-top:22px">FlatOut is our own project, built by NEO Media Productions.</p>
+      <p style="margin-top:22px">Our own product, in-house from the ground up — UI and interaction design, the brand system and app icon, all the copy, six-language localization, plus the marketing site. Neo Media designs and builds, not just retouches.</p>
+      <div class="applinks">
+        <a href="https://apps.apple.com/app/id6802510938" target="_blank" rel="noopener">Download on the App Store ↗</a>
+        <a href="https://flatoutapp.app" target="_blank" rel="noopener">Visit flatoutapp.app ↗</a>
+      </div>
     </div>
     <div class="spec">
-      <div><span class="k">Platform</span><span class="v">iOS</span></div>
-      <div><span class="k">Android</span><span class="v">Coming soon</span></div>
-      <div><span class="k">Status</span><span class="v">In development</span></div>
+      <div><span class="k">Platform</span><span class="v">iOS · Android to follow</span></div>
+      <div><span class="k">Status</span><span class="v">Live on the App Store</span></div>
+      <div><span class="k">Role</span><span class="v">Design · build · copy</span></div>
       <div><span class="k">Publisher</span><span class="v">NEO Media Productions Inc</span></div>
+      <div><span class="k">Website</span><span class="v"><a href="https://flatoutapp.app" target="_blank" rel="noopener" style="color:var(--neon)">flatoutapp.app</a></span></div>
       <div><span class="k">Support</span><span class="v"><a href="mailto:support@flatoutapp.app" style="color:var(--neon)">support@flatoutapp.app</a></span></div>
     </div>
+  </div>
+  <div class="appshots">
+    <div class="appshot"><img src="photos/flatout-schedule.jpg" width="660" height="1433" alt="FlatOut — schedule with every session in your time zone" loading="lazy"></div>
+    <div class="appshot"><img src="photos/flatout-pitwall.jpg" width="660" height="1433" alt="FlatOut — PitWall at-a-glance dashboard" loading="lazy"></div>
+    <div class="appshot"><img src="photos/flatout-circuit.jpg" width="660" height="1433" alt="FlatOut — hand-drawn circuit map, colour-coded by sector" loading="lazy"></div>
   </div>
   <p style="max-width:74ch;margin:34px auto 0;font-size:12px;line-height:1.7;color:var(--dim);text-align:center">FlatOut is an independent, unofficial application and is not affiliated with, endorsed by, or associated with Formula 1, Formula One Licensing B.V., Formula One World Championship Limited, or the Fédération Internationale de l&#39;Automobile (FIA). F1, FORMULA 1, FIA, GRAND PRIX and related marks are trademarks of their respective owners.</p>
 </section>
